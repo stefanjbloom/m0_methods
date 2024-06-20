@@ -80,26 +80,24 @@ puts "The square of 4 is #{square 4}"
 # 5: Write a method named "check_stock" that satisfies the following interaction pattern:
 # Hint: You will only write one check_stock method that checks the quantity and then prints the corresponding statement.
 
-def check_stock[quantity, item]
-  item = ["Coffee", "Tortillas", "Cheese", "Salsa"]
-  quantity >= 4
+def check_stock(quantity, item)
+  if quantity >= 4 
   "#{item} is stocked"
-  quantity < 4
-  "#{item} - running LOW!"
-  quantity = 0
+  elsif quantity < 4 && quantity > 0
+  "#{item} - running LOW"
+  else quantity == 0
   "#{item} - OUT of stock!"
+  end
 end
 
-puts check_stock(4, "Coffee");
+puts check_stock(4, "Coffee")
 # => "Coffee is stocked"
 
-check_stock(3, "Tortillas");
+puts check_stock(3, "Tortillas");
 # => "Tortillas - running LOW"
 
-check_stock(0, "Cheese");
+puts check_stock(0, "Cheese");
 # => "Cheese - OUT of stock!"
 
-check_stock(1, "Salsa");
+puts check_stock(1, "Salsa");
 # => "Salsa - running LOW"
-
-# I really need help with this, difficult to graps.  #5 is completely incorrect.
